@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.dog.mapper.SelectMapper">
+
+  <select id="getUserById" resultType="org.dog.entity.User" parameterType="java.lang.Integer">
+    select *
+    from t_user
+    where id = #{id}
+  </select>
+
+  <select id="getCount" resultType="java.lang.Integer">
+    select count(*) from t_user
+  </select>
+
+  <select id="getUserByIdToMap" resultType="java.util.Map" parameterType="java.lang.Integer">
+    select * from t_user where id = #{id}
+  </select>
+
+  <select id="getAllUser" resultType="java.util.Map">
+    select * from t_user
+  </select>
+</mapper>
